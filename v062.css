@@ -1,0 +1,8 @@
+/* Arcane Table v0.6.2 — stability and interaction hardening */
+.tabs{min-height:38px;align-items:center}.tab{min-height:34px;display:inline-flex;align-items:center;justify-content:center}
+.v06-commander-section,.v06-commander-section *,.v06-blood-card,.v06-blood-card *{pointer-events:auto!important}
+.v06-commander-input input{position:relative;z-index:8;touch-action:manipulation;user-select:text;-webkit-user-select:text}
+.v06-deaths button,.v06-blood-card .stepper button{position:relative;z-index:9;min-width:38px;min-height:38px;cursor:pointer}
+.v06-blood-card{position:relative;z-index:5}.v06-blood-card .stepper{position:relative;z-index:7}
+.v06-table-status{will-change:auto}.topbar,.tabs,.tab{transform:translateZ(0)}
+@media(max-height:520px){.tabs{min-height:34px}.tab{min-height:31px}.v06-deaths button,.v06-blood-card .stepper button{min-width:34px;min-height:34px}}
