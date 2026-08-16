@@ -1,0 +1,87 @@
+/* Arcane Table v0.8.1 — mobile table density + Giant layout fixes */
+@media (max-width:1000px) and (max-height:620px){
+  html.v081-mobile-table .players-grid{gap:6px!important}
+  html.v081-mobile-table .player-card{min-width:0}
+  html.v081-mobile-table .counter-strip{left:6px!important;bottom:5px!important;z-index:8}
+  html.v081-mobile-table .counter-strip .mini-counter{height:27px;padding:3px 5px!important;gap:3px!important;font-size:0!important;white-space:nowrap}
+  html.v081-mobile-table .counter-strip .mini-counter::before{content:'☠';font-size:12px}
+  html.v081-mobile-table .counter-strip .mini-counter button{font-size:11px!important;min-width:18px;padding:0 2px!important}
+  html.v081-mobile-table .counter-strip .mini-counter b{font-size:11px!important;min-width:10px;text-align:center}
+  html.v081-mobile-table .v05-player-actions{right:6px!important;bottom:5px!important;gap:3px!important;z-index:9}
+  html.v081-mobile-table .v05-player-actions .token-link,
+  html.v081-mobile-table .v05-player-actions .v05-state-btn{width:30px!important;height:28px!important;min-width:30px!important;padding:0!important;font-size:0!important;border-radius:9px!important;display:grid!important;place-items:center!important}
+  html.v081-mobile-table .v05-player-actions .token-link::before{content:'◆';font-size:12px;color:#fff}
+  html.v081-mobile-table .v05-player-actions .v05-state-btn::before{content:'☷';font-size:14px;color:#ead49f}
+  html.v081-mobile-table .v061-resource{height:25px!important;min-width:34px!important;padding:2px 5px!important;gap:3px!important;border-radius:9px!important}
+  html.v081-mobile-table .v061-resource i{font-size:13px!important}
+  html.v081-mobile-table .v061-resource b{font-size:10px!important}
+  html.v081-mobile-table .v06-cmd-chip{height:20px!important;padding:2px 5px!important;font-size:8px!important}
+  html.v081-mobile-table .v06-cmd-chip b{font-size:9px!important}
+
+  /* Six-player FFA: reserve three clean horizontal bands in every card. */
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-card{padding:7px 7px 88px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-avatar{width:31px!important;height:31px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-avatar span{font-size:15px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-info.v03-info{gap:5px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-name{font-size:12px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-meta{font-size:7px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .life{font-size:clamp(38px,8vh,52px)!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-card .life-controls{grid-template-columns:repeat(4,27px)!important;gap:2px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .player-card .life-controls button{width:27px!important;height:25px!important;font-size:10px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .v06-table-status{left:6px!important;right:6px!important;bottom:35px!important;gap:2px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .v06-resources{gap:3px!important;overflow-x:auto;scrollbar-width:none}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .v06-own-commander{font-size:7px!important;max-width:130px!important;margin-top:2px!important}
+  html.v081-six:not(.v081-giant2):not(.v081-giant3) .v06-own-commander span{max-width:96px!important}
+
+  /* Giant: two team columns remain side-by-side; heads become vertical rows. */
+  html.v081-giant2 .players-grid.teams-grid,
+  html.v081-giant3 .players-grid.teams-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;height:100%}
+  html.v081-giant2 .team-card,
+  html.v081-giant3 .team-card{padding:5px!important;gap:4px!important;grid-template-rows:auto minmax(0,1fr)!important}
+  html.v081-giant2 .team-header,
+  html.v081-giant3 .team-header{grid-template-columns:minmax(62px,1fr) auto auto!important;gap:4px!important;padding:2px 2px 5px!important}
+  html.v081-giant2 .team-header small,
+  html.v081-giant3 .team-header small{display:none!important}
+  html.v081-giant2 .team-header .eyebrow,
+  html.v081-giant3 .team-header .eyebrow{font-size:7px!important}
+  html.v081-giant2 .team-life,
+  html.v081-giant3 .team-life{font-size:30px!important}
+  html.v081-giant2 .team-life-controls,
+  html.v081-giant3 .team-life-controls{grid-template-columns:repeat(4,27px)!important;gap:2px!important}
+  html.v081-giant2 .team-life-controls button,
+  html.v081-giant3 .team-life-controls button{width:27px!important;height:26px!important;font-size:10px!important;padding:0!important}
+  html.v081-giant2 .team-heads,
+  html.v081-giant3 .team-heads{grid-template-columns:1fr!important;grid-auto-rows:minmax(0,1fr)!important;gap:4px!important;min-height:0!important}
+  html.v081-giant2 .team-member,
+  html.v081-giant3 .team-member{position:relative!important;display:block!important;padding:4px 5px!important;min-height:0!important;overflow:hidden!important}
+  html.v081-giant2 .team-member .player-info,
+  html.v081-giant3 .team-member .player-info{position:absolute!important;left:5px!important;top:5px!important;width:35%!important;max-width:125px!important;margin:0!important;z-index:6}
+  html.v081-giant2 .team-member .player-avatar,
+  html.v081-giant3 .team-member .player-avatar{width:27px!important;height:27px!important}
+  html.v081-giant2 .team-member .player-avatar span,
+  html.v081-giant3 .team-member .player-avatar span{font-size:13px!important}
+  html.v081-giant2 .team-member .player-name,
+  html.v081-giant3 .team-member .player-name{font-size:10px!important}
+  html.v081-giant2 .team-member .player-meta,
+  html.v081-giant3 .team-member .player-meta{display:none!important}
+  html.v081-giant2 .team-member .v06-own-commander,
+  html.v081-giant3 .team-member .v06-own-commander{font-size:6.5px!important;max-width:110px!important;margin-top:1px!important;gap:2px!important}
+  html.v081-giant2 .team-member .v06-own-commander span,
+  html.v081-giant3 .team-member .v06-own-commander span{max-width:88px!important}
+  html.v081-giant2 .team-member .v06-own-commander b,
+  html.v081-giant3 .team-member .v06-own-commander b{display:none!important}
+  html.v081-giant2 .team-member .v07-holder-inline,
+  html.v081-giant3 .team-member .v07-holder-inline{margin-top:1px!important;gap:2px!important}
+  html.v081-giant2 .team-member .v07-holder-inline span,
+  html.v081-giant3 .team-member .v07-holder-inline span{height:14px!important;padding:1px 4px!important;font-size:6px!important}
+  html.v081-giant2 .team-member .v06-table-status,
+  html.v081-giant3 .team-member .v06-table-status{left:38%!important;right:5px!important;top:5px!important;bottom:auto!important;gap:2px!important;z-index:7}
+  html.v081-giant2 .team-member .v06-resources,
+  html.v081-giant3 .team-member .v06-resources{gap:2px!important;overflow-x:auto;scrollbar-width:none}
+  html.v081-giant2 .team-member .v06-cmd-damage,
+  html.v081-giant3 .team-member .v06-cmd-damage{gap:2px!important;overflow-x:auto!important}
+  html.v081-giant2 .team-member .counter-strip,
+  html.v081-giant3 .team-member .counter-strip{left:5px!important;bottom:4px!important}
+  html.v081-giant2 .team-member .v05-player-actions,
+  html.v081-giant3 .team-member .v05-player-actions{right:5px!important;bottom:4px!important}
+}
