@@ -1,0 +1,76 @@
+/* Arcane Table v0.8.2 — mobile navigation hotfix */
+@media (max-width:1100px) and (max-height:700px){
+  .topbar{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr) auto!important;
+    gap:5px!important;
+    align-items:center!important;
+    overflow:visible!important;
+  }
+  .brand{
+    min-width:46px!important;
+    max-width:58px!important;
+    gap:4px!important;
+    overflow:visible!important;
+  }
+  .brand>div{display:none!important}
+  .sigil{
+    width:28px!important;
+    height:28px!important;
+    flex:0 0 28px!important;
+  }
+  .version{
+    font-size:7px!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+  }
+  .tabs{
+    position:relative!important;
+    min-width:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    display:flex!important;
+    justify-content:flex-start!important;
+    align-items:center!important;
+    gap:4px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    flex-wrap:nowrap!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x!important;
+    padding:2px 14px 3px 1px!important;
+    scroll-padding-inline:1px 14px;
+  }
+  .tabs::-webkit-scrollbar{display:none!important}
+  .tabs>*{flex:0 0 auto!important}
+  .tab{
+    min-height:29px!important;
+    height:29px!important;
+    padding:5px 8px!important;
+    font-size:9px!important;
+  }
+  .v08-quick-bank{
+    display:flex!important;
+    flex:0 0 auto!important;
+    margin-left:2px!important;
+    padding:0 14px 0 5px!important;
+  }
+  .v08-quick-sound{flex:0 0 auto!important}
+  .top-actions{
+    display:flex!important;
+    flex:0 0 auto!important;
+    gap:3px!important;
+  }
+  .top-actions [data-action="share"],
+  .top-actions [data-action="install"]{display:none!important}
+  .top-actions .icon-btn{
+    width:29px!important;
+    height:29px!important;
+    min-width:29px!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+  }
+}
