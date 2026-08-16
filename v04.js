@@ -21,9 +21,9 @@
   }
 
   function updateVersion(){
-    document.querySelectorAll('.version').forEach(e=>e.textContent='v0.4');
+    document.querySelectorAll('.version').forEach(e=>e.textContent='v0.5');
     document.querySelectorAll('.eyebrow').forEach(e=>{
-      if(/web beta v0\.[23]/i.test(e.textContent)) e.textContent=e.textContent.replace(/v0\.[23]/i,'v0.4');
+      if(/web beta v0\.[234]/i.test(e.textContent)) e.textContent=e.textContent.replace(/v0\.[234]/i,'v0.5');
     });
   }
 
@@ -47,7 +47,7 @@
     if(s.modules?.daynight)modules.push('Día/Noche');
     return `<div class="v04-home-backdrop" data-v04-backdrop>
       <section class="v04-home-panel panel">
-        <div class="v04-home-brand"><div class="v04-home-sigil">✦</div><div><span>ARCANE TABLE</span><small>WEB BETA · v0.4</small></div></div>
+        <div class="v04-home-brand"><div class="v04-home-sigil">✦</div><div><span>ARCANE TABLE</span><small>WEB BETA · v0.5</small></div></div>
         <div class="v04-home-copy"><div class="eyebrow">TU MESA · TUS REGLAS</div><h1>${hasGame?'Partida guardada':'Nueva partida'}</h1><p>${hasGame?'Puedes continuar exactamente donde quedaste o volver a configurar la mesa.':'Configura el formato, los jugadores y los módulos antes de comenzar.'}</p></div>
         ${hasGame?`<div class="v04-resume-card"><div><span>PARTIDA ACTUAL</span><strong>${esc(formatLabel(s))}</strong><small>${Number(s.startLife)||40} vidas iniciales${modules.length?' · '+esc(modules.join(' · ')):''}</small></div><div class="v04-resume-life">${Number(s.startLife)||40}</div></div>`:''}
         <div class="v04-home-actions">
