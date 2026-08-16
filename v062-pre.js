@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const CURRENT='v0.8.1';
+  const CURRENT='v0.8.2';
   window.__ARCANE_CURRENT_VERSION__=CURRENT;
   try{
     const proto=Node.prototype;
