@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const CURRENT='v0.6.2';
+  const CURRENT='v0.7';
   window.__ARCANE_CURRENT_VERSION__=CURRENT;
   try{
     const proto=Node.prototype;
@@ -21,5 +21,5 @@
         return d.set.call(this,next);
       }
     });
-  }catch(_){/* narrow compatibility fallback: v062.js still syncs visible labels */}
+  }catch(_){/* narrow compatibility fallback: newer layer still syncs visible labels */}
 })();
