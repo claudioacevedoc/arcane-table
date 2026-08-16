@@ -1,6 +1,6 @@
-const SHELL = 'arcane-shell-v0.6.1';
+const SHELL = 'arcane-shell-v0.6.2';
 const IMAGES = 'arcane-card-images-v0.2.0';
-const ASSETS = ['./','./index.html','./styles.css','./v03.css','./v04.css','./v05.css','./v06.css','./app.js','./v03.js','./v04.js','./v05.js','./v06.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
+const ASSETS = ['./','./index.html','./styles.css','./v03.css','./v04.css','./v05.css','./v06.css','./v062.css','./app.js','./v062-pre.js','./v03.js','./v04.js','./v05.js','./v06.js','./v062.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(SHELL).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
@@ -25,8 +25,8 @@ self.addEventListener('fetch', event => {
     }));
     return;
   }
-  event.respondWith(caches.match(req).then(hit => hit || fetch(req).then(res => {
+  event.respondWith(fetch(req).then(res => {
     if (url.origin === self.location.origin && res.ok) caches.open(SHELL).then(c => c.put(req, res.clone()));
     return res;
-  }).catch(() => caches.match('./index.html'))));
+  }).catch(() => caches.match(req).then(hit => hit || caches.match('./index.html'))));
 });
