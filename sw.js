@@ -1,11 +1,11 @@
-const SHELL = 'arcane-shell-v0.8.0';
+const SHELL = 'arcane-shell-v0.8.1';
 const IMAGES = 'arcane-card-images-v0.2.0';
-const ASSETS = ['./','./index.html','./styles.css','./v03.css','./v04.css','./v05.css','./v06.css','./v062.css','./v07.css','./v08.css','./app.js','./v062-pre.js','./v03.js','./v04.js','./v05.js','./v06.js','./v062.js','./v07.js','./v08.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
+const ASSETS = ['./','./index.html','./styles.css','./v03.css','./v04.css','./v05.css','./v06.css','./v062.css','./v07.css','./v08.css','./v081.css','./app.js','./v062-pre.js','./v03.js','./v04.js','./v05.js','./v06.js','./v062.js','./v07.js','./v081-pre.js','./v08.js','./v081.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(SHELL).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => ![SHELL,IMAGES].includes(k)).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => ![SHELL,IMAGES,'arcane-audio-backup-v0.8.1'].includes(k)).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', event => {
   const req = event.request;
